@@ -3,10 +3,19 @@
 
 .mental-header{
   --background: #403742;
-  text-transform: uppercase;
-  color: #fff;
-  font-family: 'Lexend Mega', sans-serif;
 }
+
+.mental-title {
+  font-size: 25px;
+  font-family: 'Raleway', sans-serif;
+  color: #fff;
+  span {
+    font-weight: 900;
+    font-size: 30px;
+    color: #00A375;
+  }
+}
+
 .mental-content {
   --background: #fcfcfc;
 }
