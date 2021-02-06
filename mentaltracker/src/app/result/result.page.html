@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar class="mental-header">
+    <ion-title>MentalTracker</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="mental-content">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>Количество баллов: {{currentValue}}</ion-card-subtitle>
+      <ion-card-title>Ваш результат</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <div class="result">{{quizData.systemAnswersByValues[resultIndex]}}</div>
+      <ion-button (click)="goToMain()" color="warning">Пройти еще раз</ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

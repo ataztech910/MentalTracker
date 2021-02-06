@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar class="mental-header">
+    <ion-title class="mental-title">Ментал<span>Ъ</span></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="mental-content">
+<div>
+  <h3>
+    {{quizData.matrixOfQuestions[currentIndex]}}
+  </h3>
+</div>
+<div class="questions" *ngFor="let answer of quizData.matrixOfAnswers[currentIndex]; let i = index">
+  <button class="answer" [ngClass]="{'selected': answer.selected}" (click)="forwardIndex(i)">{{answer.content}}</button>
+</div>
+<div class="footer-buttons">
+  <ion-button *ngIf="checkIndexForward()" (click)="changeIndex(false)" color="warning">назад</ion-button>
+  <ion-button *ngIf="checkIndexBackward()" color="warning">далее</ion-button>
+</div>
+</ion-content>
+
+<ion-footer class="ion-no-border">
+  <ion-toolbar part="toolbar">
+    <ion-progress-bar color="success" value="{{getProgress()}}"></ion-progress-bar>
+  </ion-toolbar>
+</ion-footer>

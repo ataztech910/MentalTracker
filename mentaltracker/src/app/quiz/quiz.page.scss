@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Mega&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@600&display=swap');
+
+.mental-header{
+  --background: #403742;
+}
+.mental-title {
+  font-size: 25px;
+  font-family: 'Raleway', sans-serif;
+  color: #fff;
+}
+.mental-content {
+  --background: #fcfcfc;
+}
+ion-toolbar::part(bg) {
+  background: #fcfcfc;
+}
+
+ion-footer::part(toolbar) {
+  display:none;
+}
+
+ion-toolbar {
+  --background: #fcfcfc;
+  position: relative;
+}
+
+.questions {
+  margin: 1rem;
+}
+
+h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.1em;
+  margin-left: 1rem;
+}
+
+.answer {
+  font-family: 'Montserrat', sans-serif;
+  white-space: pre-wrap;
+  text-align: left;
+  height: 95px;
+  width: 100%;
+  font-size: 1em;
+  padding: 0.5rem 1rem;
+  background: #FAD389;
+  border-radius: 10px;
+  color: #403742;
+}
+
+ion-progress-bar {
+  height: 1rem;
+}
+
+.footer-buttons {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  position: relative;
+  button {
+    background: #FAD389;
+    border-radius: 10px;
+    color: #403742;
+    padding: 1rem;
+
+  }
+}
+
+// ion-button::part(native){
+//     color: #403742;
+//     background: #34CFFE;
+// }
+
+.selected {
+  background: #1FFFBF;
+}
