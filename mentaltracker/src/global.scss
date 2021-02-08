@@ -30,3 +30,13 @@
     background: #E1FEC0 !important;
   }
 }
+
+.ion-color-success {
+  --ion-color-base: var(--ion-color-success, rgb(33, 44, 74)) !important;
+  --ion-color-base-rgb: var(--ion-color-success-rgb, 45, 211, 111) !important;
+  --ion-color-contrast: var(--ion-color-success-contrast, #fff) !important;
+  --ion-color-contrast-rgb: var(--ion-color-success-contrast-rgb, 255, 255, 255) !important;
+  --ion-color-shade: var(--ion-color-success-shade, rgb(33, 44, 74)) !important;
+  --ion-color-tint: var(--ion-color-success-tint, rgb(33, 44, 74)) !important;
+}
+

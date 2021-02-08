@@ -3,31 +3,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@600;900&display=swap');
 
 .mental-header{
-  --background: #403742;
+  --background: rgb(33, 44, 74);
+  padding: 1rem;
 }
 .mental-title {
   font-size: 25px;
   font-family: 'Raleway', sans-serif;
   color: #fff;
-  span {
-    font-weight: 900;
-    font-size: 30px;
-    color: #00A375;
-  }
+  width: 100%;
+  padding: 0;
 }
 .mental-content {
   --background: #fcfcfc;
 }
-ion-toolbar::part(bg) {
-  background: #fcfcfc;
+ion-content::part(background) {
+  background-color: #E5E5F7;
+  opacity: 0.4;
+  background-image: radial-gradient(#444CF7 1px, #E5E5F7 1px);
+  background-size: 20px 20px;
 }
 
-ion-footer::part(toolbar) {
-  display:none;
-}
 
 ion-toolbar {
-  --background: #fcfcfc;
   position: relative;
 }
 
@@ -72,10 +69,9 @@ ion-progress-bar {
   }
 }
 
-// ion-button::part(native){
-//     color: #403742;
-//     background: #34CFFE;
-// }
+ion-toolbar:last-child {
+  min-height: 15px !important;
+}
 
 .selected {
   background: #1FFFBF;

@@ -29,6 +29,14 @@ export class QuizPage implements OnInit {
     }
   }
 
+  resetAnswers(matrixOfAnswers: any) {
+    for (let i = 0; i < matrixOfAnswers.length; i++) {
+      matrixOfAnswers[i].forEach(data => {
+        data.selected = false;
+      });
+    }
+  }
+
   forwardIndex(index: number) {
     this.quizData.matrixOfAnswers[this.currentIndex].forEach(data => {
       data.selected = false;

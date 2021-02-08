@@ -16,6 +16,13 @@
   }
 }
 
+ion-content::part(background) {
+  background-color: #E5E5F7;
+  opacity: 0.4;
+  background-image: radial-gradient(#444CF7 1px, #E5E5F7 1px);
+  background-size: 20px 20px;
+}
+
 .mental-content {
   --background: #fcfcfc;
 }

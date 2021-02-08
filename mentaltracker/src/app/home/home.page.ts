@@ -15,7 +15,7 @@ import { Router } from '@angular/router';
 export class HomePage {
   enter$: Observable<boolean>;
   @ViewChild('barChart') barChart;
-  bars: any;
+  result = '0';
   colorArray: any;
   emptyChart = true;
   constructor(private store: Store<{ firstLoad: boolean, quit: boolean }>,
@@ -31,39 +31,16 @@ export class HomePage {
 
   createBarChart() {
     this.storage.get('results').then((val) => {
-      if (val.length > 0) {
+      console.log('val', val);
+      if (val && val.length > 0) {
         this.emptyChart = false;
-        const labels = [];
-        const data = [];
-        val.forEach(element => {
-          labels.push(element.timestamp);
-          data.push(element.score);
-        });
-        this.bars = new Chart(this.barChart.nativeElement, {
-          type: 'bar',
-          data: {
-            labels: labels,
-            datasets: [{
-              label: 'Ваше настроение',
-              data: data,
-              backgroundColor: 'rgb(38, 194, 129)', // array should have same number of elements as number of dataset
-              borderColor: 'rgb(38, 194, 129)',// array should have same number of elements as number of dataset
-              borderWidth: 1
-            }]
-          },
-          options: {
-            scales: {
-              yAxes: [{
-                ticks: {
-                  beginAtZero: true
-                }
-              }]
-            }
-          }
-        });
+        this.result = (100 * ( val.reduce((sum, value) => {
+          return sum + value.score;
+        }, 0) / val.length ) / 63).toFixed(1);
+        console.log('result', this.result);
       }
     }
-  )
+    );
   }
 
   goToMain() {

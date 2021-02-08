@@ -1,22 +1,37 @@
-<ion-header>
-  <ion-toolbar class="mental-header">
-    <ion-title class="mental-title">Ментал<span>Ъ</span></ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-header></app-header>
 
 <ion-content [fullscreen]="true">
   <div id="container">
-    <ion-card>
-      <ion-card-header>
-        <ion-card-title>Ваши результаты</ion-card-title>
-      </ion-card-header>
 
-      <ion-card-content>
-        <canvas #barChart></canvas>
-        <div *ngIf="emptyChart">
-          <div>Вы еще не проходили тест</div>
-          <ion-button (click)="goToMain()" color="warning">Пройти тест</ion-button>
+    <div class="waves" [ngStyle]="{'height': result + '%'}">
+      <div class="wave wave--back" >
+        <div class="water">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 350 32" preserveAspectRatio="none"><title>wave2</title><path d="M350,17.32V32H0V17.32C116.56,65.94,175-39.51,350,17.32Z"/></svg>
         </div>
+        <div class="water">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 350 32" preserveAspectRatio="none"><title>wave2</title><path d="M350,17.32V32H0V17.32C116.56,65.94,175-39.51,350,17.32Z"/></svg>
+        </div>
+      </div>
+      <div class="wave wave--front">
+        <div class="water">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 350 32" preserveAspectRatio="none"><title>wave2</title><path d="M350,17.32V32H0V17.32C116.56,65.94,175-39.51,350,17.32Z"/></svg>
+        </div>
+        <div class="water">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 350 32" preserveAspectRatio="none"><title>wave2</title><path d="M350,17.32V32H0V17.32C116.56,65.94,175-39.51,350,17.32Z"/></svg>
+        </div>
+      </div>
+    </div>
+
+    <ion-card class="mental-card">
+      <ion-card-header>
+        <ion-card-title class="mental-card__header">Ваш результат</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+          <div *ngIf="emptyChart">
+            <div class="sub-text">Вы еще не проходили тест</div>
+            <ion-button (click)="goToMain()" color="warning">Пройти тест</ion-button>
+          </div>
+          <div class="result-number" *ngIf="!emptyChart">{{result}} %</div>
       </ion-card-content>
     </ion-card>
   </div>

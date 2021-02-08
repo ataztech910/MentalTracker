@@ -17,7 +17,9 @@ import { IonicStorageModule } from '@ionic/storage';
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, StoreModule.forRoot({ enter: userEnterReducer }),
+  imports: [BrowserModule,
+    IonicModule.forRoot(),
+    AppRoutingModule, StoreModule.forRoot({ enter: userEnterReducer }),
     IonicStorageModule.forRoot(),
     // Instrumentation must be imported after importing StoreModule (config is optional)
     StoreDevtoolsModule.instrument({
