@@ -8,7 +8,8 @@ import { Platform } from '@ionic/angular';
 export class DatabaseService {
 
   constructor(private sqlite: SQLite, private platform: Platform) {
-    if(!this.platform.is('mobileweb')) {
+    console.log(this.platform);
+    if (this.platform.is('mobile')) {
       this.sqlite.create({
         name: 'mentaltracker.db',
         location: 'default'
